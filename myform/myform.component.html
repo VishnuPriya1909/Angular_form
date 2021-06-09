@@ -1,0 +1,70 @@
+<style>
+    form{
+
+        width: 60%;
+        height: 550px;
+        margin-left: 70px;
+        margin-top: 30px;
+        border-style:solid;
+    }
+    label
+    {
+        margin-left: 30px;
+    }
+    input[type=text]{
+        margin-top: 30px;
+        margin-left: 10px;
+        background-color: rgb(155, 149, 149);
+        width: 210px;
+        height: 40px;
+        border: none;
+    }
+    button
+    {
+        margin-top: 40px;
+        margin-left: 50%;
+        font-size: medium;
+        width: 100px;
+        height: 50px;
+    }
+    .big
+    {
+        border-style: dashed;
+        margin-top: 30px;
+        height: 50px;
+        margin-left: 4px;
+    }
+</style>
+<form [formGroup]="name" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">District Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  
+    <label for="last-name">Area(sq.mt): </label>
+    <input id="last-name" type="text" formControlName="lastName">
+    <label for="last-name">Population: </label>
+    <input id="last-name" type="text" formControlName="lname">
+<button type="submit" [disabled]="name.valid">Save</button>
+<div class="big">
+    <label>Biggest area</label>
+    <input id="big" type="radio" value="Coimbatore" name="gender" formControlName="big">
+    Coimbatore
+    <input id="big" type="radio" value="salem" name="gender" formControlName="big" checked>
+    Salem
+    <input id="big" type="radio" value="Chennai" name="gender" formControlName="big">
+    Chennai
+ </div>
+ <div class="big">
+    <label>Populated area</label>
+    <input type="radio" value="Coimbatore"  formControlName="pop" checked>
+    Coimbatore
+    <input type="radio" value="salem"  formControlName="pop">
+    Salem
+    <input type="radio" value="Chennai" formControlName="pop">
+    Chennai
+ </div>
+  </form>
+  
+
+   
+      
